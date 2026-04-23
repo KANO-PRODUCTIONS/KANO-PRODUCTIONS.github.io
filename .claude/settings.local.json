@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:play.google.com)",
+      "WebSearch",
+      "WebFetch(domain:apkpure.com)",
+      "WebFetch(domain:www.appbrain.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)"
+    ]
+  }
+}
