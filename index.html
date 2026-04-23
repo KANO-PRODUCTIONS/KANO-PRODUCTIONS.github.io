@@ -116,25 +116,25 @@
             text-align: center;
             padding: 0 20px;
             position: absolute;
-            top: 10%;
+            top: 15%;
             left: 0;
             right: 0;
             z-index: 10;
             pointer-events: none;
             transform: translateY(-50%);
         }
-        .header .ruby { font-size: 11px; letter-spacing: 3px; margin-bottom: 2px; }
-        .header h1 { font-size: 26px; font-weight: 800; letter-spacing: 2px; margin-bottom: 6px; }
-        .header .tagline { font-size: 12px; opacity: 0.7; letter-spacing: 1px; }
+        .header .ruby { font-size: 12px; letter-spacing: 3px; margin-bottom: 2px; }
+        .header h1 { font-size: 38px; font-weight: 800; letter-spacing: 5px; margin-bottom: 6px; }
+        .header .tagline { font-size: 13px; opacity: 0.7; letter-spacing: 1px; }
 
         /* ===== Section Label ===== */
         .section-label {
             text-align: center;
             padding: 0 20px;
-            font-size: 14px;
-            letter-spacing: 6px;
+            font-size: 12px;
+            letter-spacing: 5px;
             position: absolute;
-            top: 20%;
+            top: 24%;
             left: 0;
             right: 0;
             z-index: 10;
@@ -160,29 +160,29 @@
             text-align: center;
             padding: 0 20px;
             position: absolute;
-            bottom: 90px;
+            bottom: 60px;
             left: 0;
             right: 0;
             z-index: 10;
             pointer-events: none;
         }
         .app-name {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             letter-spacing: 2px;
-            min-height: 30px;
+            min-height: 26px;
             transition: opacity 0.25s;
         }
 
         .nav-dots {
             display: flex;
             justify-content: center;
-            gap: 8px;
-            margin-top: 14px;
+            gap: 7px;
+            margin-top: 12px;
         }
         .nav-dot {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background: rgba(60,40,20,0.2);
             border: none;
@@ -197,9 +197,9 @@
         }
 
         .swipe-hint {
-            font-size: 11px;
+            font-size: 10px;
             opacity: 0.45;
-            margin-top: 24px;
+            margin-top: 18px;
             letter-spacing: 1px;
             text-align: center;
             transition: opacity 1s;
@@ -369,8 +369,11 @@
         }
 
         @media (max-width: 600px) {
-.header h1 { font-size: 22px; }
-            .header { padding-top: 52px; }
+            .header h1 { font-size: 20px; letter-spacing: 2px; }
+            .header .ruby { font-size: 10px; }
+            .header .tagline { font-size: 11px; }
+            .header { top: 11%; padding-top: 52px; }
+            .section-label { top: 24%; }
         }
     </style>
 </head>
@@ -585,8 +588,8 @@ function createBeerMug() {
     });
     g.add(new THREE.Mesh(new THREE.TubeGeometry(hCurve, 24, 0.075, 8, false), hMat));
 
-    g.position.y = -1.2;
-    g.scale.setScalar(0.95);
+    g.position.y = -1.1;
+    g.scale.setScalar(0.84);
     return g;
 }
 
@@ -663,8 +666,8 @@ APPS.forEach((app, i) => {
     const w = new THREE.Group();
     w.add(model);
     const a = i * STEP;
-    w.position.set(Math.sin(a) * RADIUS_X, 5.75, Math.cos(a) * RADIUS_Z);
-    w.userData = { idx: i, angle: a, baseY: model.position.y, posY: 5.75 };
+    w.position.set(Math.sin(a) * RADIUS_X, 5.6, Math.cos(a) * RADIUS_Z);
+    w.userData = { idx: i, angle: a, baseY: model.position.y, posY: 5.6 };
     carousel.add(w);
     wrappers.push(w);
 });
