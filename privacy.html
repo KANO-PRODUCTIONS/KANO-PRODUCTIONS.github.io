@@ -9,6 +9,9 @@
 </head>
 <body>
 
+<!-- 背景レイヤー（SafeArea含むビューポート全体をカバー） -->
+<div class="bg-layer"></div>
+
 <!-- Hamburger Button -->
 <button class="hamburger" id="btnHamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -100,17 +103,32 @@
     const btnC = document.getElementById('btnMenuClose');
     const overlay = document.getElementById('menuOverlay');
     const menu = document.getElementById('sideMenu');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+
     function openMenu() {
         menu.classList.add('active');
         overlay.classList.add('active');
+        themeColor.setAttribute('content', '#3a2a1a');
     }
     function closeMenu() {
         menu.classList.remove('active');
         overlay.classList.remove('active');
+        themeColor.setAttribute('content', '#f5c842');
     }
     btnH.addEventListener('click', openMenu);
     btnC.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
+
+    // indexと同じ--vh制御
+    function updateVh() {
+        const vh = (window.visualViewport ? window.visualViewport.height : window.innerHeight) * 0.01;
+        document.documentElement.style.setProperty('--vh', vh + 'px');
+    }
+    window.addEventListener('resize', updateVh);
+    if (window.visualViewport) {
+        window.visualViewport.addEventListener('resize', updateVh);
+    }
+    updateVh();
 </script>
 </body>
 </html>
