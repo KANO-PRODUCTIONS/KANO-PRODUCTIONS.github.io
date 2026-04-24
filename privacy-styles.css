@@ -120,7 +120,7 @@ footer {
 
 /* ===== Hamburger Button ===== */
 .hamburger {
-    position: absolute;
+    position: fixed;
     top: 14px;
     left: 14px;
     z-index: 1000;
