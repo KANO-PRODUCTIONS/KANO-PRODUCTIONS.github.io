@@ -5,14 +5,14 @@
 }
 
 html {
-    background: #f5c842;
+    background: linear-gradient(180deg, #f5c842 0%, #e8a830 100%) fixed;
     min-height: 100%;
 }
 
 body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.8;
-    background: #f5c842;
+    background: linear-gradient(180deg, #f5c842 0%, #f0b830 30%, #e8a830 100%);
     min-height: 100vh;
     min-height: 100dvh;
     color: #3a2a1a;
@@ -218,6 +218,39 @@ footer {
     padding: 24px;
     color: rgba(255,255,255,0.3);
     font-size: 11px;
+}
+
+/* SafeArea固定バー */
+.safe-area-top,
+.safe-area-bottom {
+    display: none;
+}
+
+@supports (padding-top: env(safe-area-inset-top)) {
+    .safe-area-top {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-top);
+        background: #f5c842;
+        z-index: 900;
+    }
+    .safe-area-bottom {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: env(safe-area-inset-bottom);
+        background: #e8a830;
+        z-index: 900;
+    }
+    .safe-area-top.active,
+    .safe-area-bottom.active {
+        display: block;
+    }
 }
 
 /* Safari safe area */
