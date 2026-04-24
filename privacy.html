@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#f5c842">
+    <meta name="theme-color" content="#fef7e3">
     <title>KANO PRODUCTIONSのプライバシーポリシー</title>
     <link rel="stylesheet" href="privacy-styles.css">
 </head>
@@ -98,8 +98,17 @@
     const btnC = document.getElementById('btnMenuClose');
     const overlay = document.getElementById('menuOverlay');
     const menu = document.getElementById('sideMenu');
-    function openMenu() { menu.classList.add('active'); overlay.classList.add('active'); }
-    function closeMenu() { menu.classList.remove('active'); overlay.classList.remove('active'); }
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    function openMenu() {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        themeColor.setAttribute('content', '#f5c842');
+    }
+    function closeMenu() {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        themeColor.setAttribute('content', '#fef7e3');
+    }
     btnH.addEventListener('click', openMenu);
     btnC.addEventListener('click', closeMenu);
     overlay.addEventListener('click', closeMenu);
