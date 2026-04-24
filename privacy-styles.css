@@ -223,35 +223,33 @@ footer {
 /* SafeArea固定バー */
 .safe-area-top,
 .safe-area-bottom {
-    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 20px;
+    z-index: 900;
+}
+.safe-area-top {
+    top: 0;
+    background: #f5c842;
+    background: white;
+    height: 40px;
+}
+.safe-area-bottom {
+    bottom: 0;
+    background: #e8a830;
+    background: white;
+    height: 40px;
 }
 
-@supports (padding-top: env(safe-area-inset-top)) {
+/* @supports (padding-top: env(safe-area-inset-top)) {
     .safe-area-top {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         height: env(safe-area-inset-top);
-        background: #f5c842;
-        z-index: 900;
     }
     .safe-area-bottom {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
         height: env(safe-area-inset-bottom);
-        background: #e8a830;
-        z-index: 900;
     }
-    .safe-area-top.active,
-    .safe-area-bottom.active {
-        display: block;
-    }
-}
+} */
 
 /* Safari safe area */
 @supports (padding-top: env(safe-area-inset-top)) {
