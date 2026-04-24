@@ -12,11 +12,13 @@ html {
 body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.8;
-    background: #f5c842;
-    min-height: 100vh;
-    min-height: 100dvh;
+    background: linear-gradient(180deg, #f5c842 0%, #f0b830 30%, #e8a830 100%);
+    height: 100vh;
+    height: 100dvh;
     color: #3a2a1a;
-    overflow-x: hidden;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -36,14 +38,25 @@ header {
     margin: 0;
 }
 
-main {
+.main-wrap {
     max-width: 680px;
-    margin: 20px auto 40px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 16px;
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
-    padding: 36px 32px;
-    border-radius: 16px;
     box-shadow: 0 4px 24px rgba(58, 42, 26, 0.12);
+}
+
+main {
+    padding: 36px 32px;
+    padding-right: 20px;
+    margin-right: 1px;
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 h2 {
@@ -113,10 +126,12 @@ ul li::before {
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 10px 20px;
+    padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
     font-size: 11px;
     color: rgba(58, 42, 26, 0.5);
     letter-spacing: 1px;
+    flex-shrink: 0;
 }
 
 /* ===== Hamburger Button ===== */
@@ -280,10 +295,12 @@ footer {
         letter-spacing: 3px;
     }
 
-    main {
-        margin: 0 12px 32px;
-        padding: 28px 20px;
+    .main-wrap {
         border-radius: 12px;
+    }
+
+    main {
+        padding: 28px 20px;
     }
 
     h2 {
