@@ -9,10 +9,6 @@
 </head>
 <body>
 
-<!-- SafeArea固定バー -->
-<div class="safe-area-top"></div>
-<div class="safe-area-bottom"></div>
-
 <!-- Hamburger Button -->
 <button class="hamburger" id="btnHamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -103,20 +99,14 @@
     const overlay = document.getElementById('menuOverlay');
     const menu = document.getElementById('sideMenu');
     const themeColor = document.querySelector('meta[name="theme-color"]');
-    const saTop = document.querySelector('.safe-area-top');
-    const saBot = document.querySelector('.safe-area-bottom');
     function openMenu() {
         menu.classList.add('active');
         overlay.classList.add('active');
-        saTop.classList.add('active');
-        saBot.classList.add('active');
         themeColor.setAttribute('content', '#3a2a1a');
     }
     function closeMenu() {
         menu.classList.remove('active');
         overlay.classList.remove('active');
-        saTop.classList.remove('active');
-        saBot.classList.remove('active');
         themeColor.setAttribute('content', '#f5c842');
     }
     btnH.addEventListener('click', openMenu);

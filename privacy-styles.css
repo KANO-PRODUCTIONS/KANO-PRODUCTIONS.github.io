@@ -243,45 +243,6 @@ footer {
     font-size: 11px;
 }
 
-/* SafeArea固定バー */
-.safe-area-top,
-.safe-area-bottom {
-    display: none;
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 20px;
-    z-index: 900;
-}
-
-.safe-area-top {
-    top: 0;
-    background: #f5c842;
-    background: red;
-    height: 40px;
-}
-
-.safe-area-bottom {
-    bottom: 0;
-    background: #e8a830;
-    background: red;
-    height: 40px;
-}
-
-.safe-area-top.active,
-.safe-area-bottom.active {
-    display: block;
-}
-
-/* @supports (padding-top: env(safe-area-inset-top)) {
-    .safe-area-top {
-        height: env(safe-area-inset-top);
-    }
-    .safe-area-bottom {
-        height: env(safe-area-inset-bottom);
-    }
-} */
-
 /* Safari safe area */
 @supports (padding-top: env(safe-area-inset-top)) {
     body {
