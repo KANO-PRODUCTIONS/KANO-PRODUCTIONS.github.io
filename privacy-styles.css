@@ -242,14 +242,14 @@ footer {
     height: 40px;
 }
 
-/* @supports (padding-top: env(safe-area-inset-top)) {
+@supports (padding-top: env(safe-area-inset-top)) {
     .safe-area-top {
         height: env(safe-area-inset-top);
     }
     .safe-area-bottom {
         height: env(safe-area-inset-bottom);
     }
-} */
+}
 
 /* Safari safe area */
 @supports (padding-top: env(safe-area-inset-top)) {
