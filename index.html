@@ -7,7 +7,7 @@
     <title>KANO PRODUCTIONS - 夕日が沈むまで夢中になれる作品を</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { background: #d4b07a; }
+        html { background: #f5c842; }
 
         body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
@@ -866,13 +866,17 @@ function openDialog(idx) {
     }
 
     ov.classList.add('active');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#3a2a1a');
 }
 
-document.getElementById('btnDlgClose').addEventListener('click', () => {
+function closeDialog() {
     document.getElementById('dlgOverlay').classList.remove('active');
-});
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f5c842');
+}
+
+document.getElementById('btnDlgClose').addEventListener('click', closeDialog);
 document.getElementById('dlgOverlay').addEventListener('click', (e) => {
-    if (e.target === e.currentTarget) e.currentTarget.classList.remove('active');
+    if (e.target === e.currentTarget) closeDialog();
 });
 
 /* ============================================================
