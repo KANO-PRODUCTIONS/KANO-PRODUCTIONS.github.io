@@ -5,7 +5,8 @@
       "WebSearch",
       "WebFetch(domain:apkpure.com)",
       "WebFetch(domain:www.appbrain.com)",
-      "WebFetch(domain:webcache.googleusercontent.com)"
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "Bash(grep -E \"\\\\.\\(html|css|js\\)$\")"
     ]
   }
 }
