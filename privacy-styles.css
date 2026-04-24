@@ -16,6 +16,7 @@ body {
     min-height: 100vh;
     min-height: 100dvh;
     color: #3a2a1a;
+    overflow-x: hidden;
 }
 
 header {

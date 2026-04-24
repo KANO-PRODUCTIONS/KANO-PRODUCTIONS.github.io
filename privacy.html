@@ -98,16 +98,13 @@
     const btnC = document.getElementById('btnMenuClose');
     const overlay = document.getElementById('menuOverlay');
     const menu = document.getElementById('sideMenu');
-    const themeColor = document.querySelector('meta[name="theme-color"]');
     function openMenu() {
         menu.classList.add('active');
         overlay.classList.add('active');
-        themeColor.setAttribute('content', '#3a2a1a');
     }
     function closeMenu() {
         menu.classList.remove('active');
         overlay.classList.remove('active');
-        themeColor.setAttribute('content', '#f5c842');
     }
     btnH.addEventListener('click', openMenu);
     btnC.addEventListener('click', closeMenu);
