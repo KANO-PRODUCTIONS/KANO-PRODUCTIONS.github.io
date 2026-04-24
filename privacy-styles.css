@@ -12,10 +12,9 @@ html {
 body {
     font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     line-height: 1.8;
-    background: transparent;
+    background: #f5c842;
     height: 100vh;
     height: 100dvh;
-    height: calc(var(--vh, 1vh) * 100);
     color: #3a2a1a;
     overflow: hidden;
     display: flex;
@@ -23,13 +22,7 @@ body {
 }
 
 .bg-layer {
-    position: fixed;
-    top: calc(-1 * env(safe-area-inset-top, 0px));
-    bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
-    left: 0;
-    width: 100%;
-    background: linear-gradient(180deg, #f5c842 0%, #f0b830 30%, #e8a830 50%, #deb87a 80%, #d4b07a 100%);
-    z-index: -1;
+    display: none;
 }
 
 header {
@@ -62,6 +55,12 @@ header {
 }
 
 main {
+    padding: 12px 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.scroll-inner {
     padding: 36px 32px;
     padding-right: 20px;
     margin-right: 1px;
@@ -307,12 +306,12 @@ footer {
     }
 
     .main-wrap {
-        margin: 0 12px;
+        margin: 0 20px;
         width: auto;
         border-radius: 12px;
     }
 
-    main {
+    .scroll-inner {
         padding: 28px 20px;
         padding-right: 14px;
     }
@@ -324,7 +323,13 @@ footer {
 
     footer {
         font-size: 9px;
-        padding: 6px 16px;
-        padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px));
+        padding-top: 12px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    }
+
+    footer p {
+        font-size: 9px;
     }
 }
