@@ -159,11 +159,8 @@ footer {
 
 .side-menu {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 270px;
-    height: 100vh;
-    height: 100dvh;
     background: #3a2a1a;
     z-index: 1200;
     display: flex;
